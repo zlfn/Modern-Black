@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+	<html lang="ko">
+		<head>
+			<meta charset="UTF-8">
+			<title>{{imp[0]}} - {{imp[1][0]}}</title>
+			{{imp[3][3]|safe}}
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+			<link rel="stylesheet" href="/views/onamumodernskin/css/style.css">
+			<script src="https://kit.fontawesome.com/790c7752e3.js" crossorigin="anonymous"></script>
+	        <meta name="keywords" content="{{imp[1][0]}}">
+			<meta name="description" content="{{data|cut_100}}">	
+		</head>
+		<body>
+			<nav class="navbar navbar-dark bg-dark">
+				<div class="container px-3">
+					<a class="navbar-brand" href="/">{{imp[1][4]|safe}}</a>
+							<a class="nav-link" href="/recent_changes">최근 편집</a>
+							<a class="nav-link" href="/recent_discuss">최근 토론</a>
+							<a class="nav-link" href="/other">기타 도구</a>
+						<form method="post" action="/search" id="searchform" class="form-inline">
+							<div class="input-group">
+								<input type="search" name="search" placeholder="검색" accesskey="f" class="form-control" id="searchInput" autocomplete="off">
+								<span class="input-group-btn">
+									<button name="fulltext" value="검색" id="searchSearchButton" class="btn btn-light"><span class="fa fa-search"></span></button>
+								</span>
+							</div>
+						</form>
+					</div>
+			</nav>
+			<div class="container-fluid" style="background:#EAEAEA">
+				<div class="container" style="border:1px solid #CCCCCC; background:#FFFFFF">
+					<br><h1>{{imp[0]}}
+					{% if not menu == 0 %}
+                            <div class="btn-group" role="group" aria-label="tools">
+                                {% for sub_d in menu %}
+                                    {% if loop.index < 6 %}
+                                        <a class="btn btn-dark tools-btn" href="/{{sub_d[0]}}">{{sub_d[1]}}</a>
+                                    {% endif %}
+                                    {% if not menu[loop.index] and loop.index > 5 %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                    {% endif %}</h1>
+					{{data|safe}}<br>
+				</div>
+			</div>
+		</body>
+			<footer>
+				{{imp[1][1]|safe}}<br><a href="https://github.com/2du/openNAMU">openNAMU</a>
+			</footer>
+	</html>
