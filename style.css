@@ -3,7 +3,7 @@ body {
     word-break: break-all;
     word-wrap: break-word;
     margin: 0;
-    font-family: "나눔바른고딕", "nanumbarungothic", "Nanum Barun Gothic", "KoPub Dotum", "Malgun Gothic", "맑은 고딕", "sans-serif";
+    font-family: nanumbarungothic;
 }
 
 table {
@@ -38,6 +38,10 @@ h5 {
 
 h6 {
     font-size: 1.1rem;
+}
+
+h1#title {
+	border-bottom: none;
 }
 
 footer {
@@ -75,11 +79,14 @@ footer {
     display: inline-block;
 }
 
-.btn-group {
+.btn-group#main {
 	float: right;
 }
 
 .nav-link {
 	color: #fff;
-	margin: 0 -230px;
+}
+
+.navbar-brand {
+	color: #FFFFFF;
 }
